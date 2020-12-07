@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 onready var joueurAnimation = $JoueurAnimation;
 onready var joueurCanon = $JoueurCanon;
+onready var joueurSon = $JoueurSon;
 var laser = preload("res://Scenes/Laser.tscn");
 var velocity = Vector2();
 var vitesse = 300;
@@ -26,15 +27,32 @@ func actions():
 		nouveau_laser.global_position = joueurCanon.global_position;
 		nouveau_laser.global_rotation = global_rotation;
 		get_parent().add_child(nouveau_laser);
+		joueurSon.play();
 
 func mouvements():
 	var avancer = Input.is_action_pressed("ui_avancer");
+	var reculer = Input.is_action_pressed("ui_reculer");
+	var gauche = Input.is_action_pressed("ui_gauche");
+	var droite = Input.is_action_pressed("ui_droite");
 	var dir = get_global_mouse_position() - global_position;
 	
-	if avancer:
+	if avancer && !reculer && !gauche && !droite:
 		velocity = Vector2(vitesse, 0).rotated(rotation);
+	elif !avancer && reculer && !gauche && !droite:
+		velocity = Vector2(-vitesse, 0).rotated(rotation);
+	elif !avancer && !reculer && gauche && !droite:
+		velocity = Vector2(0, -vitesse).rotated(rotation);
+	elif !avancer && !reculer && !gauche && droite:
+		velocity = Vector2(0, vitesse).rotated(rotation);
+	elif avancer && !reculer && gauche && !droite:
+		velocity = Vector2(vitesse, -vitesse).rotated(rotation);
+	elif avancer && !reculer && !gauche && droite:
+		velocity = Vector2(vitesse, vitesse).rotated(rotation);
+	elif !avancer && reculer && gauche && !droite:
+		velocity = Vector2(vitesse, -vitesse).rotated(rotation);
 	else:
-		velocity = Vector2(0,0).rotated(rotation);
+		velocity = Vector2(0, 0).rotated(rotation);
+	
 	velocity = move_and_slide(velocity);
 	
 	if dir.length() > 5:

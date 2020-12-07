@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/Joueur.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Joueur/Player_Speed.png" type="Texture" id=2]
+[ext_resource path="res://Ressources/Sons/Joueur/shoot.wav" type="AudioStream" id=3]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -26,3 +27,6 @@ position = Vector2( 43.4871, 0 )
 
 [node name="JoueurCamera" type="Camera2D" parent="."]
 current = true
+
+[node name="JoueurSon" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
