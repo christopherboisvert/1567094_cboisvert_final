@@ -5,6 +5,7 @@ onready var joueurCanon = $JoueurCanon;
 var laser = preload("res://Scenes/Laser.tscn");
 var velocity = Vector2();
 var vitesse = 300;
+export var vie = 3;
 
 func _ready():
 	joueurAnimation.play("default");

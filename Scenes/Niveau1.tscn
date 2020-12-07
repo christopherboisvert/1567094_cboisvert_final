@@ -1,7 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scenes/FondJeu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Joueur.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Ressources/Interface/1.png" type="Texture" id=3]
+[ext_resource path="res://Ressources/Interface/2.png" type="Texture" id=4]
+[ext_resource path="res://Ressources/Interface/3.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Niveau1.gd" type="Script" id=6]
+[ext_resource path="res://Ressources/Interface/YourScoreIs.png" type="Texture" id=7]
+[ext_resource path="res://Ressources/Logo/space.png" type="Texture" id=8]
+[ext_resource path="res://Ressources/Logo/Logo.png" type="Texture" id=9]
+[ext_resource path="res://Ressources/Polices/astroarmada.ttf" type="DynamicFontData" id=10]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( 27.8929, -264.884 )
@@ -11,7 +19,12 @@ b = Vector2( 27.9305, 5639.6 )
 a = Vector2( 0.804535, -0.273758 )
 b = Vector2( 10261.4, -10.6621 )
 
+[sub_resource type="DynamicFont" id=3]
+size = 34
+font_data = ExtResource( 10 )
+
 [node name="Niveau1" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="Joueur" parent="." instance=ExtResource( 2 )]
 position = Vector2( 511.775, 297.276 )
@@ -66,3 +79,50 @@ __meta__ = {
 
 [node name="LimiteBasLigne" type="CollisionShape2D" parent="LimiteBas"]
 shape = SubResource( 2 )
+
+[node name="Interface" type="CanvasLayer" parent="."]
+
+[node name="Vie3" type="Sprite" parent="Interface"]
+position = Vector2( 993.821, 29.4365 )
+scale = Vector2( 0.599786, 0.599786 )
+texture = ExtResource( 5 )
+
+[node name="Vie2" type="Sprite" parent="Interface"]
+visible = false
+position = Vector2( 993.671, 29.3586 )
+scale = Vector2( 0.594528, 0.617372 )
+texture = ExtResource( 4 )
+
+[node name="Vie1" type="Sprite" parent="Interface"]
+visible = false
+position = Vector2( 992.856, 28.9131 )
+scale = Vector2( 0.596462, 0.651636 )
+texture = ExtResource( 3 )
+
+[node name="ScoreChiffre" type="RichTextLabel" parent="Interface"]
+margin_left = 714.109
+margin_top = 12.091
+margin_right = 864.109
+margin_bottom = 47.091
+custom_fonts/normal_font = SubResource( 3 )
+text = "0 pts"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoreTexte" type="Sprite" parent="Interface"]
+position = Vector2( 557.5, 29.0381 )
+scale = Vector2( 0.400001, 0.400001 )
+texture = ExtResource( 7 )
+
+[node name="Logo" type="Node" parent="Interface"]
+
+[node name="LogoImage1" type="Sprite" parent="Interface/Logo"]
+position = Vector2( 280.881, 29.0985 )
+scale = Vector2( 0.105722, 0.105722 )
+texture = ExtResource( 9 )
+
+[node name="LogoImage2" type="Sprite" parent="Interface/Logo"]
+position = Vector2( 95.7627, 28.3201 )
+scale = Vector2( 0.660001, 0.558463 )
+texture = ExtResource( 8 )
