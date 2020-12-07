@@ -23,3 +23,6 @@ polygon = PoolVector2Array( 12.1834, -12.2843, 38.3459, 0.202385, -5.65475, 22.7
 
 [node name="JoueurCanon" type="Position2D" parent="."]
 position = Vector2( 43.4871, 0 )
+
+[node name="JoueurCamera" type="Camera2D" parent="."]
+current = true

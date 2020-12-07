@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Ressources/FondJeu/ciel.jpg" type="Texture" id=1]
+
+[node name="FondJeu" type="Node2D"]
+
+[node name="FondJeuImage" type="Sprite" parent="."]
+position = Vector2( 511.604, 300.435 )
+scale = Vector2( 0.123989, 0.104046 )
+texture = ExtResource( 1 )
