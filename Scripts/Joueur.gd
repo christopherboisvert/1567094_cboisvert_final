@@ -18,7 +18,7 @@ func _physics_process(delta):
 	
 	
 func actions():
-	var joueur_tire = Input.is_action_just_pressed("ui_shoot");
+	var joueur_tire = Input.is_action_just_pressed("ui_click_left");
 	
 	if joueur_tire:
 		var nouveau_laser = laser.instance();
