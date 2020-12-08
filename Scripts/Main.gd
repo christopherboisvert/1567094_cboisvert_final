@@ -4,9 +4,10 @@ onready var boutonJouerImage = $boutonJouer/boutonJouerImage;
 onready var boutonAideImage = $boutonAide/boutonAideImage;
 onready var boutonCreditsImage = $boutonCredits/boutonCreditsImage;
 onready var boutonQuitterImage = $boutonQuitter/boutonQuitterImage;
+onready var sonBackground = $SonBackground;
 
 func _ready():
-	pass
+	sonBackground.play();
 
 func _on_boutonJouer_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("ui_click_left"):

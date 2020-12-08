@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/player_death.wav-96e84d29ca44f7c91d324424099db961.sample"
+
+[deps]
+
+source_file="res://Ressources/Sons/Joueur/player_death.wav"
+dest_files=[ "res://.import/player_death.wav-96e84d29ca44f7c91d324424099db961.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

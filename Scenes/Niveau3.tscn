@@ -1,17 +1,15 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scenes/FondJeu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Joueur.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Ressources/Boutons/Button_Back.png" type="Texture" id=3]
 [ext_resource path="res://Scenes/PouvoirVie.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Asteroides.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scripts/Niveau1.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Niveau3.gd" type="Script" id=5]
 [ext_resource path="res://Ressources/Interface/YourScoreIs.png" type="Texture" id=7]
 [ext_resource path="res://Ressources/Logo/space.png" type="Texture" id=8]
 [ext_resource path="res://Ressources/Logo/Logo.png" type="Texture" id=9]
 [ext_resource path="res://Ressources/Polices/astroarmada.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Ressources/Sons/MusiqueJeu/Automation.ogg" type="AudioStream" id=11]
-[ext_resource path="res://Scenes/EnnemiSimpleLaser.tscn" type="PackedScene" id=12]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( 27.8929, -264.884 )
@@ -28,8 +26,8 @@ font_data = ExtResource( 10 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 241.388, 24.5197 )
 
-[node name="Niveau1" type="Node2D"]
-script = ExtResource( 6 )
+[node name="Niveau3" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="Joueur" parent="." instance=ExtResource( 2 )]
 position = Vector2( 511.775, 297.276 )
@@ -213,193 +211,6 @@ position = Vector2( 1074.64, 3735.98 )
 
 [node name="PouvoirVie24" parent="PowerUp" instance=ExtResource( 4 )]
 position = Vector2( 1039.71, 3812.17 )
-
-[node name="Decors" type="Node2D" parent="."]
-
-[node name="Asteroides" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 951.637, 155.592 )
-
-[node name="Asteroides2" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 1600.21, 526.206 )
-
-[node name="Asteroides3" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 2305.8, 205.483 )
-
-[node name="Asteroides4" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 360.08, 1017.98 )
-
-[node name="Asteroides5" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 1229.6, 1231.8 )
-
-[node name="Asteroides6" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 1111.82, 2077.76 )
-
-[node name="Asteroides7" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 1760.39, 2448.38 )
-
-[node name="Asteroides8" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 2465.98, 2127.65 )
-
-[node name="Asteroides9" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 520.261, 2940.15 )
-
-[node name="Asteroides10" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 1389.78, 3153.97 )
-
-[node name="Asteroides11" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 3738.78, 518.669 )
-
-[node name="Asteroides12" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 4387.36, 889.282 )
-
-[node name="Asteroides13" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 5092.95, 568.559 )
-
-[node name="Asteroides14" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 3147.23, 1381.06 )
-
-[node name="Asteroides15" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 4016.74, 1594.87 )
-
-[node name="Asteroides16" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 6152.17, 379.845 )
-
-[node name="Asteroides17" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 6800.75, 750.459 )
-
-[node name="Asteroides18" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 7506.34, 429.736 )
-
-[node name="Asteroides19" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 5560.62, 1242.24 )
-
-[node name="Asteroides20" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 6430.13, 1456.05 )
-
-[node name="Asteroides21" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 8341.31, 774.958 )
-
-[node name="Asteroides22" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 8989.88, 1145.57 )
-
-[node name="Asteroides23" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 9695.48, 824.848 )
-
-[node name="Asteroides24" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 7749.75, 1637.35 )
-
-[node name="Asteroides25" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 8619.27, 1851.16 )
-
-[node name="Asteroides26" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 3151.45, 2237.94 )
-
-[node name="Asteroides27" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 3800.03, 2608.56 )
-
-[node name="Asteroides28" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 4505.62, 2287.83 )
-
-[node name="Asteroides29" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 2559.9, 3100.33 )
-
-[node name="Asteroides30" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 3429.41, 3314.15 )
-
-[node name="Asteroides31" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 5757.06, 2173.87 )
-
-[node name="Asteroides32" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 6405.63, 2544.48 )
-
-[node name="Asteroides33" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 7111.23, 2223.76 )
-
-[node name="Asteroides34" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 5165.5, 3036.26 )
-
-[node name="Asteroides35" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 6035.02, 3250.08 )
-
-[node name="Asteroides36" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 8309.27, 2472.87 )
-
-[node name="Asteroides37" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 8957.85, 2843.49 )
-
-[node name="Asteroides38" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 9663.44, 2522.76 )
-
-[node name="Asteroides39" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 7717.72, 3335.26 )
-
-[node name="Asteroides40" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 8587.24, 3549.08 )
-
-[node name="Asteroides41" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 1153.58, 4026.6 )
-
-[node name="Asteroides42" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 1802.15, 4397.21 )
-
-[node name="Asteroides43" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 2507.74, 4076.49 )
-
-[node name="Asteroides44" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 562.021, 4888.99 )
-
-[node name="Asteroides45" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 1431.54, 5102.81 )
-
-[node name="Asteroides46" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 3377.26, 4511.25 )
-
-[node name="Asteroides47" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 4025.83, 4881.86 )
-
-[node name="Asteroides48" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 4731.43, 4561.14 )
-
-[node name="Asteroides49" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 2785.7, 5373.64 )
-
-[node name="Asteroides50" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 3655.22, 5587.46 )
-
-[node name="Asteroides51" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 5914.54, 4397.22 )
-
-[node name="Asteroides52" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 6563.11, 4767.83 )
-
-[node name="Asteroides53" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 7268.71, 4447.11 )
-
-[node name="Asteroides54" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 5322.98, 5259.61 )
-
-[node name="Asteroides55" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 6192.5, 5473.42 )
-
-[node name="Asteroides56" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 8352.04, 4454.23 )
-
-[node name="Asteroides57" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 9000.61, 4824.85 )
-
-[node name="Asteroides58" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 9706.2, 4504.12 )
-
-[node name="Asteroides59" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 7760.48, 5316.62 )
-
-[node name="Asteroides60" parent="Decors" instance=ExtResource( 5 )]
-position = Vector2( 8630, 5530.44 )
-
-[node name="Ennemis" type="Node2D" parent="."]
-
-[node name="EnnemiSimpleLaser" parent="Ennemis" instance=ExtResource( 12 )]
-position = Vector2( 1905.88, 274.24 )
 [connection signal="input_event" from="Interface/boutonRetourMenu" to="." method="_on_boutonRetourMenu2_input_event"]
 [connection signal="mouse_entered" from="Interface/boutonRetourMenu" to="." method="_on_boutonRetourMenu_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/boutonRetourMenu" to="." method="_on_boutonRetourMenu_mouse_exited"]
