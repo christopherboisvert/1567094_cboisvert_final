@@ -5,7 +5,9 @@
 
 [sub_resource type="CircleShape2D" id=1]
 
-[node name="Asteroides" type="StaticBody2D"]
+[node name="Asteroides" type="StaticBody2D" groups=[
+"asteroides",
+]]
 script = ExtResource( 2 )
 
 [node name="AsteroidesImage" type="Sprite" parent="."]

@@ -5,7 +5,9 @@
 
 [sub_resource type="CircleShape2D" id=1]
 
-[node name="LaserEnnemi" type="KinematicBody2D"]
+[node name="LaserEnnemi" type="KinematicBody2D" groups=[
+"laser",
+]]
 script = ExtResource( 2 )
 
 [node name="LaserEnnemiImage" type="Sprite" parent="."]
@@ -14,3 +16,6 @@ texture = ExtResource( 1 )
 
 [node name="LaserEnnemiCollision" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
+
+[node name="LaserEnnemiVisible" type="VisibilityNotifier2D" parent="."]
+[connection signal="screen_exited" from="LaserEnnemiVisible" to="." method="_on_LaserEnnemiVisible_screen_exited"]

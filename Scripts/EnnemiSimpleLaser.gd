@@ -5,9 +5,10 @@ var enAttaque = false;
 var enCoolDown = false;
 var ennemi;
 var laserEnnemi = preload("res://Scenes/LaserEnnemi.tscn");
-export var vitesse = 50;
+export var vitesse = 150;
 onready var ennemiSimpleLaserPosition = $EnnemiSimpleLaserPosition;
 onready var ennemiTimer = $EnnemiTimer;
+onready var ennemiTir = $EnnemiTir;
 
 func _ready():
 	ennemiTimer.start();
@@ -25,21 +26,30 @@ func mouvements(delta):
 func shoot():
 	if enCoolDown == false:
 		enCoolDown = true;
-		var nouveauLaserEnnemi = laserEnnemi.instance();
-		nouveauLaserEnnemi.global_position = ennemiSimpleLaserPosition.global_position;
-		nouveauLaserEnnemi.global_rotation = rotation;
-		get_parent().add_child(nouveauLaserEnnemi);
+		if ennemi.vie > 0:
+			var nouveauLaserEnnemi = laserEnnemi.instance();
+			nouveauLaserEnnemi.global_position = ennemiSimpleLaserPosition.global_position;
+			nouveauLaserEnnemi.global_rotation = rotation;
+			get_parent().add_child(nouveauLaserEnnemi);
+			ennemiTir.play();
+		else:
+			ennemi = null;
+			enAttaque = false;
 	
 
 func _on_EnnemiZoneDetection_body_entered(body):
-	if body.is_in_group("Joueur"):
+	if body.is_in_group("joueur"):
 		ennemi = body;
 		enAttaque = true;
 
 func _on_EnnemiZoneDetection_body_exited(body):
-	if body.is_in_group("Joueur"):
+	if body.is_in_group("joueur"):
 		ennemi = null;
 		enAttaque = false;
+
+func tuer():
+	ennemi.augmenter_score_joueur(250);
+	queue_free();
 
 func _on_EnnemiTimer_timeout():
 	enCoolDown = false;

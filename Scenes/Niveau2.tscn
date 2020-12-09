@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/FondJeu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Joueur.tscn" type="PackedScene" id=2]
@@ -23,7 +23,13 @@ b = Vector2( 10261.4, -10.6621 )
 size = 34
 font_data = ExtResource( 10 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.262745, 0.498039, 0.156863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 241.388, 24.5197 )
 
 [node name="Niveau2" type="Node2D"]
@@ -101,6 +107,8 @@ margin_left = 859.26
 margin_top = 13.2973
 margin_right = 1007.26
 margin_bottom = 43.2973
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
 step = 1.0
 value = 100.0
 __meta__ = {
@@ -133,7 +141,7 @@ texture = ExtResource( 3 )
 
 [node name="boutonRetourMenuCollision" type="CollisionShape2D" parent="Interface/boutonRetourMenu"]
 position = Vector2( 514.49, 295.793 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="SonBackground" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )

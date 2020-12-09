@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/FondJeu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Joueur.tscn" type="PackedScene" id=2]
@@ -12,6 +12,7 @@
 [ext_resource path="res://Ressources/Polices/astroarmada.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Ressources/Sons/MusiqueJeu/Automation.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Scenes/EnnemiSimpleLaser.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/EnnemiDuoMissile.tscn" type="PackedScene" id=13]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( 27.8929, -264.884 )
@@ -25,7 +26,13 @@ b = Vector2( 10261.4, -10.6621 )
 size = 34
 font_data = ExtResource( 10 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.262745, 0.498039, 0.156863, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 241.388, 24.5197 )
 
 [node name="Niveau1" type="Node2D"]
@@ -103,6 +110,8 @@ margin_left = 859.26
 margin_top = 13.2973
 margin_right = 1007.26
 margin_bottom = 43.2973
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 5 )
 step = 1.0
 value = 100.0
 __meta__ = {
@@ -135,7 +144,7 @@ texture = ExtResource( 3 )
 
 [node name="boutonRetourMenuCollision" type="CollisionShape2D" parent="Interface/boutonRetourMenu"]
 position = Vector2( 514.49, 295.793 )
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="SonBackground" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
@@ -398,8 +407,29 @@ position = Vector2( 8630, 5530.44 )
 
 [node name="Ennemis" type="Node2D" parent="."]
 
-[node name="EnnemiSimpleLaser" parent="Ennemis" instance=ExtResource( 12 )]
-position = Vector2( 1905.88, 274.24 )
+[node name="EnnemiSimpleLaser2" parent="Ennemis" instance=ExtResource( 12 )]
+position = Vector2( 9469.01, 425.76 )
+
+[node name="EnnemiSimpleLaser3" parent="Ennemis" instance=ExtResource( 12 )]
+position = Vector2( 5277.01, 1625.76 )
+
+[node name="EnnemiSimpleLaser4" parent="Ennemis" instance=ExtResource( 12 )]
+position = Vector2( 9158.58, 3347.73 )
+
+[node name="EnnemiSimpleLaser5" parent="Ennemis" instance=ExtResource( 12 )]
+position = Vector2( 9976.75, 5488.3 )
+
+[node name="EnnemiSimpleLaser6" parent="Ennemis" instance=ExtResource( 12 )]
+position = Vector2( 4259.05, 3804.39 )
+
+[node name="EnnemiSimpleLaser7" parent="Ennemis" instance=ExtResource( 12 )]
+position = Vector2( 501.153, 5478.79 )
+
+[node name="EnnemiSimpleLaser8" parent="Ennemis" instance=ExtResource( 12 )]
+position = Vector2( 539.208, 1540.14 )
+
+[node name="EnnemiDuoMissile" parent="Ennemis" instance=ExtResource( 13 )]
+position = Vector2( 3169.91, 230.963 )
 [connection signal="input_event" from="Interface/boutonRetourMenu" to="." method="_on_boutonRetourMenu2_input_event"]
 [connection signal="mouse_entered" from="Interface/boutonRetourMenu" to="." method="_on_boutonRetourMenu_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/boutonRetourMenu" to="." method="_on_boutonRetourMenu_mouse_exited"]

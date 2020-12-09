@@ -4,10 +4,13 @@ onready var joueurAnimation = $JoueurAnimation;
 onready var joueurCanon = $JoueurCanon;
 onready var joueurSonTir = $JoueurSonTir;
 onready var joueurSonMort = $JoueurSonMort;
+onready var joueurSonPouvoirVie = $JoueurSonPouvoirVie;
+onready var joueurSonBlessure = $JoueurSonBlessure;
 var laser = preload("res://Scenes/Laser.tscn");
 var velocity = Vector2();
-var vitesse = 300;
+export var vitesse = 400;
 export var vie = 100;
+export var score = 0;
 var sonMortJoue = false;
 
 func _ready():
@@ -20,6 +23,7 @@ func _physics_process(delta):
 	if vie != 0:
 		mouvements();
 		actions();
+		detectionCollision();
 	else:
 		if !sonMortJoue:
 			sonMortJoue = true;
@@ -72,9 +76,25 @@ func mouvements():
 	
 	if dir.length() > 5:
 		rotation = dir.angle();
-		
+
 func blesser_joueur(vieEnlever):
 	vie -= vieEnlever;
+	joueurSonBlessure.play();
 	
 func augmentation_vie_joueur(vieAugmenter):
+	joueurSonPouvoirVie.play();
 	vie += vieAugmenter;
+	if vie > 100:
+		vie = 100;
+	
+func augmenter_score_joueur(points):
+	score += points;
+	
+func detectionCollision():
+	var slide_count = get_slide_count()
+	if slide_count:
+		var collision = get_slide_collision(slide_count - 1)
+		if collision.collider.is_in_group("asteroides"):
+			blesser_joueur(1);
+		if collision.collider.is_in_group("ennemis"):
+			blesser_joueur(5);

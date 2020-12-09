@@ -49,7 +49,6 @@ scale = Vector2( 22.4631, 2.6768 )
 shape = SubResource( 1 )
 
 [node name="boutonJouerImage" type="Sprite" parent="boutonJouer"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 
 [node name="boutonAide" type="Area2D" parent="."]
@@ -61,7 +60,6 @@ scale = Vector2( 22.5469, 2.50912 )
 shape = SubResource( 2 )
 
 [node name="boutonAideImage" type="Sprite" parent="boutonAide"]
-scale = Vector2( 1, 1 )
 texture = ExtResource( 5 )
 
 [node name="boutonCredits" type="Area2D" parent="."]

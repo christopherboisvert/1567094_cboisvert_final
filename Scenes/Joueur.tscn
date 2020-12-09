@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Joueur.gd" type="Script" id=1]
 [ext_resource path="res://Ressources/Joueur/Player_Speed.png" type="Texture" id=2]
 [ext_resource path="res://Ressources/Sons/Joueur/shoot.wav" type="AudioStream" id=3]
 [ext_resource path="res://Ressources/Sons/Joueur/player_death.wav" type="AudioStream" id=4]
+[ext_resource path="res://Ressources/Sons/Pouvoir/PowerUp1.wav" type="AudioStream" id=5]
+[ext_resource path="res://Ressources/Sons/Joueur/8bit_bomb_explosion.wav" type="AudioStream" id=6]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -14,9 +16,12 @@ animations = [ {
 } ]
 
 [node name="Joueur" type="KinematicBody2D" groups=[
-"Joueur",
+"joueur",
 ]]
+collision_layer = 3
+collision_mask = 2147483651
 script = ExtResource( 1 )
+vitesse = 300
 
 [node name="JoueurAnimation" type="AnimatedSprite" parent="."]
 rotation = 1.57044
@@ -36,3 +41,9 @@ stream = ExtResource( 3 )
 
 [node name="JoueurSonMort" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="JoueurSonPouvoirVie" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="JoueurSonBlessure" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
