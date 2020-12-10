@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/FondJeu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Ressources/Boutons/Button_Play.png" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://Ressources/Boutons/Button_Quit.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/Main.gd" type="Script" id=8]
 [ext_resource path="res://Ressources/Sons/MusiqueJeu/Automation.ogg" type="AudioStream" id=9]
+[ext_resource path="res://Ressources/Interface/HighScores.png" type="Texture" id=10]
+[ext_resource path="res://Ressources/Polices/astroarmada.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -19,6 +21,10 @@ extents = Vector2( 111.179, 6.98218 )
 
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 179.318, 24.4448 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 11 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 8 )
@@ -84,8 +90,26 @@ shape = SubResource( 4 )
 [node name="boutonQuitterImage" type="Sprite" parent="boutonQuitter"]
 texture = ExtResource( 7 )
 
-[node name="SonBackground" type="AudioStreamPlayer2D" parent="."]
+[node name="SonBackground" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
+
+[node name="ScoreImage" type="Sprite" parent="."]
+position = Vector2( 841.859, 251.028 )
+scale = Vector2( 0.338858, 0.338858 )
+texture = ExtResource( 10 )
+
+[node name="Score" type="RichTextLabel" parent="."]
+margin_left = 781.783
+margin_top = 268.017
+margin_right = 900.783
+margin_bottom = 301.017
+custom_fonts/normal_font = SubResource( 5 )
+bbcode_enabled = true
+bbcode_text = "[center]0[/center]"
+text = "0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="input_event" from="boutonJouer" to="." method="_on_boutonJouer_input_event"]
 [connection signal="mouse_entered" from="boutonJouer" to="." method="_on_boutonJouer_mouse_entered"]
 [connection signal="mouse_exited" from="boutonJouer" to="." method="_on_boutonJouer_mouse_exited"]

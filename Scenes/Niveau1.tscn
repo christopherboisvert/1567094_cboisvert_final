@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Scenes/FondJeu.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Joueur.tscn" type="PackedScene" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://Ressources/Sons/MusiqueJeu/Automation.ogg" type="AudioStream" id=11]
 [ext_resource path="res://Scenes/EnnemiSimpleLaser.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/EnnemiDuoMissile.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Ressources/Interface/1.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/EnnemiTripleLaser.tscn" type="PackedScene" id=15]
 
 [sub_resource type="SegmentShape2D" id=1]
 a = Vector2( 27.8929, -264.884 )
@@ -145,6 +147,11 @@ texture = ExtResource( 3 )
 [node name="boutonRetourMenuCollision" type="CollisionShape2D" parent="Interface/boutonRetourMenu"]
 position = Vector2( 514.49, 295.793 )
 shape = SubResource( 6 )
+
+[node name="Niveau" type="Sprite" parent="Interface"]
+position = Vector2( 837.738, 28.5273 )
+scale = Vector2( 0.456875, 0.456068 )
+texture = ExtResource( 14 )
 
 [node name="SonBackground" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 11 )
@@ -419,17 +426,17 @@ position = Vector2( 9158.58, 3347.73 )
 [node name="EnnemiSimpleLaser5" parent="Ennemis" instance=ExtResource( 12 )]
 position = Vector2( 9976.75, 5488.3 )
 
-[node name="EnnemiSimpleLaser6" parent="Ennemis" instance=ExtResource( 12 )]
-position = Vector2( 4259.05, 3804.39 )
-
 [node name="EnnemiSimpleLaser7" parent="Ennemis" instance=ExtResource( 12 )]
 position = Vector2( 501.153, 5478.79 )
 
-[node name="EnnemiSimpleLaser8" parent="Ennemis" instance=ExtResource( 12 )]
-position = Vector2( 539.208, 1540.14 )
-
 [node name="EnnemiDuoMissile" parent="Ennemis" instance=ExtResource( 13 )]
 position = Vector2( 3169.91, 230.963 )
+
+[node name="EnnemiDuoMissile2" parent="Ennemis" instance=ExtResource( 13 )]
+position = Vector2( 4076.67, 4049.76 )
+
+[node name="EnnemiTripleLaser" parent="Ennemis" instance=ExtResource( 15 )]
+position = Vector2( 377.801, 1501.68 )
 [connection signal="input_event" from="Interface/boutonRetourMenu" to="." method="_on_boutonRetourMenu2_input_event"]
 [connection signal="mouse_entered" from="Interface/boutonRetourMenu" to="." method="_on_boutonRetourMenu_mouse_entered"]
 [connection signal="mouse_exited" from="Interface/boutonRetourMenu" to="." method="_on_boutonRetourMenu_mouse_exited"]

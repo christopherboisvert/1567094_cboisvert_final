@@ -19,6 +19,10 @@ config/name="1567094_cboisvert_final"
 run/main_scene="res://Scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+global="*res://Scripts/global.gd"
+
 [input]
 
 ui_accept={

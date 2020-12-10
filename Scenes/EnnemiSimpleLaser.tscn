@@ -30,6 +30,7 @@ position = Vector2( 40.875, -0.625 )
 [node name="EnnemiZoneDetection" type="Area2D" parent="."]
 
 [node name="EnnemiSimpleLaserDetection" type="CollisionShape2D" parent="EnnemiZoneDetection"]
+scale = Vector2( 1.28, 1.28 )
 shape = SubResource( 1 )
 
 [node name="EnnemiTimer" type="Timer" parent="."]

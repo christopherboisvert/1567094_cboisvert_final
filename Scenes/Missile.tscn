@@ -8,7 +8,7 @@ radius = 12.4557
 height = 33.7339
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 164.523
+radius = 177.181
 
 [node name="Missile" type="KinematicBody2D" groups=[
 "missile",

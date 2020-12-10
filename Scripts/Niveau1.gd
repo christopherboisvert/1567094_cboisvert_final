@@ -16,7 +16,7 @@ func _process(delta):
 
 func interface():
 	vieChiffre.value = joueur.vie;
-	score.text = str(joueur.score);
+	score.text = str(global.score);
 
 func _on_boutonRetourMenu2_input_event(viewport, event, shape_idx):
 	if Input.is_action_just_pressed("ui_click_left"):
@@ -32,5 +32,5 @@ func finJeu():
 	if joueur.vie <= 0:
 		joueur.visible = false;
 		boutonRetourMenu.visible = true;
-	if tableauEnnemis.get_child_count() > 0:
-		pass
+	if tableauEnnemis.get_child_count() <= 0:
+		get_tree().change_scene("res://Scenes/Niveau2.tscn");

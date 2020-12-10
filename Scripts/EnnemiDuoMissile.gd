@@ -46,7 +46,7 @@ func shoot():
 			enAttaque = false;
 	
 func tuer():
-	ennemi.augmenter_score_joueur(750);
+	global.score += 750;
 	queue_free();
 
 func _on_EnnemiDuoMissileDetection_body_entered(body):

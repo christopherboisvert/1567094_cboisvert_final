@@ -5,8 +5,12 @@ onready var boutonAideImage = $boutonAide/boutonAideImage;
 onready var boutonCreditsImage = $boutonCredits/boutonCreditsImage;
 onready var boutonQuitterImage = $boutonQuitter/boutonQuitterImage;
 onready var sonBackground = $SonBackground;
+onready var highScore = $Score;
 
 func _ready():
+	global.high_score = global.score;
+	global.score = 0;
+	highScore.bbcode_text = "[center]" + str(global.high_score) + "[/center]";
 	sonBackground.play();
 
 func _on_boutonJouer_input_event(viewport, event, shape_idx):

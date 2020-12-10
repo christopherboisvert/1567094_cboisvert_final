@@ -10,14 +10,16 @@ var laser = preload("res://Scenes/Laser.tscn");
 var velocity = Vector2();
 export var vitesse = 400;
 export var vie = 100;
-export var score = 0;
 var sonMortJoue = false;
 
 func _ready():
 	joueurAnimation.play("default");
 
 func _process(delta):
-	pass
+	if vie > 100:
+		vie = 100;
+	if vie < 0:
+		vie = 0;
 
 func _physics_process(delta):
 	if vie != 0:
@@ -84,12 +86,7 @@ func blesser_joueur(vieEnlever):
 func augmentation_vie_joueur(vieAugmenter):
 	joueurSonPouvoirVie.play();
 	vie += vieAugmenter;
-	if vie > 100:
-		vie = 100;
-	
-func augmenter_score_joueur(points):
-	score += points;
-	
+
 func detectionCollision():
 	var slide_count = get_slide_count()
 	if slide_count:

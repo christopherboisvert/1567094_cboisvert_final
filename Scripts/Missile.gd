@@ -25,8 +25,6 @@ func mouvements():
 			queue_free();
 		if collision.collider.is_in_group("laser"):
 			queue_free();
-		if collision.collider.is_in_group("missile"):
-			queue_free();
 		if collision.collider.is_in_group("ennemis"):
 			collision.collider.tuer();
 			queue_free();

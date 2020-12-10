@@ -50,7 +50,7 @@ func _on_EnnemiTripleLaserTimer_timeout():
 	enCoolDown = false;
 	
 func tuer():
-	ennemi.augmenter_score_joueur(500);
+	global.score += 500;
 	queue_free();
 
 func _on_EnnemiTripleLaserDetection_body_entered(body):

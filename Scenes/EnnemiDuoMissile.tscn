@@ -14,20 +14,23 @@ script = ExtResource( 2 )
 
 [node name="EnnemiDuoMissileImage" type="Sprite" parent="."]
 rotation = -1.56962
+scale = Vector2( 0.559908, 0.559908 )
 texture = ExtResource( 1 )
 
 [node name="EnnemiDuoMissileCollision" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 0.566386, 0.566386 )
 polygon = PoolVector2Array( 16.1734, 0.173462, -1.28796, 11.6821, 0.299438, 15.6506, 8.23645, 15.2538, 20.7888, 28.3759, 27.063, 31.6535, 53.8742, 31.5246, 59.4571, 45.9856, -48.5131, 57.7167, -60.8155, 30.3341, -60.8155, 19.6191, -52.0848, 22.0002, -56.8798, 10.7269, -51.8741, 6.13835, -54.2935, 3.71896, -55.0444, -0.118708, -53.9598, -3.37238, -51.6238, -4.87407, -55.6564, -11.732, -60.0218, -22.0501, -61.2123, -33.5588, -54.069, -40.7021, -48.1163, -58.9572, 60.2238, -46.258, 54.0907, -30.7545, 27.5864, -31.2, 20.625, -28.625, 9.5, -16.875, 1.09314, -16.8911, -2.875, -10.875 )
 
 [node name="EnnemiDuoMissilePosition1" type="Position2D" parent="."]
-position = Vector2( 77.0663, -38.2068 )
+position = Vector2( 54.6171, -22.2117 )
 
 [node name="EnnemiDuoMissilePosition2" type="Position2D" parent="."]
-position = Vector2( 80.4337, 37.4577 )
+position = Vector2( 55.214, 21.3402 )
 
 [node name="EnnemiDuoMissileDetection" type="Area2D" parent="."]
 
 [node name="EnnemiDuoMissileCercle" type="CollisionShape2D" parent="EnnemiDuoMissileDetection"]
+scale = Vector2( 1.06728, 1.06728 )
 shape = SubResource( 1 )
 
 [node name="EnnemiDuoMissileTimer" type="Timer" parent="."]

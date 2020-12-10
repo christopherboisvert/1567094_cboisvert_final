@@ -10,6 +10,6 @@ func _process(delta):
 	var collision = move_and_collide(velocity);
 	if collision:
 		if collision.collider.is_in_group("joueur"):
-			collision.collider.augmentation_vie_joueur(10);
-			collision.collider.augmenter_score_joueur(100);
+			collision.collider.augmentation_vie_joueur(5);
+			global.score += 100;
 			queue_free();

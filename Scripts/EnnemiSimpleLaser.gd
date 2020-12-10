@@ -48,7 +48,7 @@ func _on_EnnemiZoneDetection_body_exited(body):
 		enAttaque = false;
 
 func tuer():
-	ennemi.augmenter_score_joueur(250);
+	global.score += 250;
 	queue_free();
 
 func _on_EnnemiTimer_timeout():
